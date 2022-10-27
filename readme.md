@@ -14,7 +14,7 @@ COMPATIBILITY MODE WAS FIXED BY GOOGLE, SOWWY :rage3:
 Just to clarify this is the source that i found out this is possible and added my own moddification
 https://github.com/ech0devv/GoGuardian-Bypass
 
-![Website Looks](https://github.com/GamerVerse722/GoGuardian-bypass/blob/main/webview.png?raw=true)
+![Website Looks](https://github.com/GamerVerse722/GoGuardian-bypass/blob/main/WebView.png?raw=true)
 
 https://goguardian-bypass.gamerverses.repl.co
 
