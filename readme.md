@@ -14,7 +14,7 @@ COMPATIBILITY MODE WAS FIXED BY GOOGLE, SOWWY :rage3:
 Just to clarify this is the source that i found out this is possible and added my own moddification
 https://github.com/ech0devv/GoGuardian-Bypass
 
-![Website Looks]([./Screenshot 2022-10-27 081804.png](https://github.com/GamerVerse722/GoGuardian-bypass/blob/main/webview.png?raw=true))
+![Website Looks](https://github.com/GamerVerse722/GoGuardian-bypass/blob/main/webview.png?raw=true)
 https://goguardian-bypass.gamerverses.repl.co
 
 iframes. Or, for the less technical of you, embedding a website into another. You see, GoGuardian blocks websites, however can't block embedded ones (big brain move from the devs).
