@@ -11,6 +11,9 @@ This is a POC showing how flawed GoGuardian is for the price, and how other, muc
 COMPATIBILITY MODE WAS FIXED BY GOOGLE, SOWWY :rage3:
 ## Alright, cool. How does it work.
 
+##Just to clarify this is the source that i found out this is possible and added my own moddification
+https://github.com/ech0devv/GoGuardian-Bypass
+
 
 iframes. Or, for the less technical of you, embedding a website into another. You see, GoGuardian blocks websites, however can't block embedded ones (big brain move from the devs).
 
