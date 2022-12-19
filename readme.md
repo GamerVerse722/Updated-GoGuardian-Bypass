@@ -18,7 +18,7 @@ https://github.com/ech0devv/GoGuardian-Bypass
 
 Website: https://goguardian-bypass.gamerverses.repl.co
 
-### Bookmark Version (Copy this code and put it a bookmark) V1.00:
+### Bookmark Version V1.00 (Copy this code and put it a bookmark):
 
 ```Javascript
 javascript:
