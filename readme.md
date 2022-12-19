@@ -16,7 +16,6 @@ https://github.com/ech0devv/GoGuardian-Bypass
 
 ![Website Looks](https://github.com/GamerVerse722/GoGuardian-bypass/blob/main/WebView.png?raw=true)
 
-Website of page:
 https://goguardian-bypass.gamerverses.repl.co
 
 iframes. Or, for the less technical of you, embedding a website into another. You see, GoGuardian blocks websites, however can't block embedded ones (big brain move from the devs).
