@@ -17,13 +17,13 @@ https://github.com/ech0devv/GoGuardian-Bypass
 
 ### Website Verison:
 
-![Website Looks](https://github.com/GamerVerse722/GoGuardian-bypass/blob/main/Website.png?raw=true)
+![Website Looks](https://github.com/GamerVerse722/GoGuardian-bypass/blob/main/github/Website.png?raw=true)
 
 Website: https://goguardian-bypass.gamerverses.repl.co
 
 ### Bookmarklet Version V1.00 (Copy this code and put it a bookmark):
 
-![Bookmarklet Looks](https://github.com/GamerVerse722/GoGuardian-bypass/blob/main/Bookmarklet.png?raw=true)
+![Bookmarklet Looks](https://github.com/GamerVerse722/GoGuardian-bypass/blob/main/github/Bookmarklet.png?raw=true)
 
 ```Javascript
 javascript:req = new XMLHttpRequest();req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/request.js');req.onload = function() {	eval(this.responseText + 'codeRunner();');};req.send();
