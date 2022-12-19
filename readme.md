@@ -14,11 +14,15 @@ COMPATIBILITY MODE WAS FIXED BY GOOGLE, SOWWY :rage3:
 Just to clarify this is the source that i found out this is possible and added my own moddification
 https://github.com/ech0devv/GoGuardian-Bypass
 
+### Website Verison:
+
 ![Website Looks](https://github.com/GamerVerse722/GoGuardian-bypass/blob/main/WebView.png?raw=true)
 
 Website: https://goguardian-bypass.gamerverses.repl.co
 
-### Bookmark Version V1.10 (Copy this code and put it a bookmark):
+### Bookmark Version V1.00 (Copy this code and put it a bookmark):
+
+![Bookmark Looks]()
 
 ```Javascript
 javascript:req = new XMLHttpRequest();req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/request.js');req.onload = function() {	eval(this.responseText + 'codeRunner();');};req.send();
