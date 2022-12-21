@@ -19,6 +19,7 @@
     <div class="needHidden" id="buttonDiv" style="text-align: center;margin-top: 10px;"><button class="btn btn-secondary" id="submit"
       type="button" style="text-align: center;">Go!</button></div>
     <div class="needHidden" style="background: rgba(218,218,218,0);margin-top: 50px;">
+			<p style="text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);">Current Version: <span id="currentVersion"></span></p>
       <h1 style="text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);">About</h1>
       <p style="text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);">[IMPORTANT NOTE] Some
         websites will not work, this is due to website owners being annoying and not letting me embed them. Sorry
@@ -57,7 +58,7 @@
         <option value=""></option>
         -->
       </select>
-      <button class="btn btn-secondary" onclick="newSrc();" id="ListButton" style="font-family: Quicksand;">Go!</button>
+      <button class="btn btn-secondary" onclick="newSrc();" id="ListButton" style="font-family: Quicksand;margin: 0.25rem">Go!</button>
       <button class="btn btn-secondary" onclick="getLink();" id="GetLinkButton" style="font-family: Quicksand;">Copy</button>
     </div>
     <div class="needHidden" style="text-align: center; padding-right: 1em; display: inline-block; float: right;">
@@ -67,6 +68,14 @@
       </p>
     </div>
     <!-- Start of files imported -->
+		<script>
+			req = new XMLHttpRequest();
+			req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/request.js');
+			req.onload = function() {
+				eval(this.responseText + 'versionGrabber();');
+			};
+			req.send();
+		</script>
     <script>
       document.getElementById("submit").onclick = function() {
       var input = document.getElementById('urlInput');
