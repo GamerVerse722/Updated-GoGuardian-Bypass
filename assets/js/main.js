@@ -80,32 +80,3 @@ function getLink() {
 		copyTextToClipboard(myClipboard);
 	}
 }
-
-const optionsData = [
-['Blank', 'Options'],
-['https://defly.io', 'Defly.io'],
-['https://diep.io', 'Diep.io'],
-['https://drednot.io', 'Deep Space Airships'],
-['https://funny-shooter22222.jimrush.repl.co/', 'Funny Shooter 2'],
-['https://jklm.fun', 'JKLM.FUN'],
-['https://paper-io.com', 'Paper.io'],
-['https://shapez.io', 'Shapez'],
-['https://smashkarts.io', 'Smash Karts'],
-['https://sword-io-game.herokuapp.com/', 'Sword Battle'],
-['https://www.lumpty.com/amusements/Games/Tetris/tetris.html', 'Tetris'],
-['https://trex-runner.com', 'T-Rex Game'],
-['https://venge.io', 'Venge.io'],
-['https://zombsroyale.io/', 'Zombs Royal'],
-['https://1v1.lol', '1v1.lol'],
-['https://play2048.co', '2048'],
-['https://8ball-pool.io', '8 Ball Pool'],
-];
-
-const select = document.getElementById('MySelectMenu');
-
-for (let i of optionsData) {
-    var option = document.createElement('option');
-    option.value = i[0];
-    option.text = i[1];
-    select.appendChild(option);
-}
