@@ -80,3 +80,15 @@ function getLink() {
 		copyTextToClipboard(myClipboard);
 	}
 }
+
+window.addEventListener('beforeunload', function (e) {
+	e.preventDefault();
+	e.returnValue = '';
+});
+
+req = new XMLHttpRequest();
+req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/request.js');
+req.onload = function() {
+	eval(this.responseText + 'versionGrabber();');
+};
+req.send();
