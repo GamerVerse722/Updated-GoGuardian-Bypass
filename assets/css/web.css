@@ -3,7 +3,7 @@ body{
 }
 
 ::-webkit-scrollbar {
-		width: 12px;
+	width: 12px;
     background-color: #202324;
     color: #aba499;
 }
@@ -18,6 +18,15 @@ body{
 }
 
 ::-webkit-scrollbar-thumb {
-	  border-radius: 12px;
+	border-radius: 12px;
     background-color: #454a4d;
+}
+
+input {
+    border-radius: 10px;
+    border-width: 2.5px;
+    border-style: solid;
+    background-color: rgb(59, 59, 59);
+    border-color: rgb(113, 113, 113);
+    color: rgb(255,255,255);
 }

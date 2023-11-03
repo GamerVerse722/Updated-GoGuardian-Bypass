@@ -5,7 +5,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport"
 			content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-		<title>GoguardianBypass</title>
+		<title>Goguardian Bypass</title>
 		<link rel="shortcut icon" href="assets/image/Logo.JPG">
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet"
@@ -33,9 +33,7 @@
 				more like noguardian amirite
 			</p>
 			<input type="text" id="urlInput"
-				style="border-radius: 10px;border-width: 2.5px;border-style: solid;background-color: rgb(59, 59, 59);border-color: rgb(113, 113, 113);color: rgb(255,255,255);"
 				value="https://">
-
 		</div>
 		<div class="needHidden" id="buttonDiv"
 			style="text-align: center;margin-top: 10px;"><button
@@ -121,7 +119,13 @@
 				all website will be added<br>Send the
 				full link and and name of it</p>
 		</div>
-
+		<div>
+			<input type="text" onchange="changeTitle();" id="TitleInput" placeholder="Website Name">
+			<button class="btn btn-secondary" onclick="resetWebsite();">Reset</button>
+			<br>
+			<input type="text" onchange="changeImage();" id="ImageInput" placeholder="Icon">
+			<button class="btn btn-secondary" onclick="resetIcon();">Reset</button>
+		</div>
 		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
