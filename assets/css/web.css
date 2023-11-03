@@ -30,3 +30,30 @@ input {
     border-color: rgb(113, 113, 113);
     color: rgb(255,255,255);
 }
+
+.config {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.5em;
+}
+
+.addMargin {
+    margin: 0.13rem;
+}
+
+.icon, label, h2{
+    color: rgb(255,255,255)
+}
+
+.social-media {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.email-area {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet"
 			href="https://fonts.googleapis.com/css?family=Quicksand&amp;display=swap">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<link rel="stylesheet" href="assets/css/iframe.css">
 		<link rel="stylesheet" href="assets/css/styles.css">
 		<link rel="stylesheet" href="assets/css/Toggle-Switch-1.css">
@@ -68,7 +69,7 @@
 				less
 				expensive, if not, free, options are much better.<br><br><a class="aTag"
 					href="https://github.com/Winterfoxxy-0/GoGuardian-Bypass"
-					style="text-align: center;">Oringinal GitHub
+					style="text-align: center;">Original GitHub
 					from creator</a></p>
 		</div>
 		<!-- Work in Progress -->
@@ -110,7 +111,7 @@
 			<button class="btn btn-secondary" onclick="getLink();" id="GetLinkButton"
 				style="font-family: Quicksand;">Copy</button>
 		</div>
-		<div class="needHidden"
+		<div class="needHidden email-area"
 			style="text-align: center; padding-right: 1em; display: inline-block; float: right;">
 			<a class="aTag" style="font-family: Quicksand;"
 				href=mailto:gameremailbypass@gmail.com?subject>Send a link to
@@ -119,13 +120,23 @@
 				all website will be added<br>Send the
 				full link and and name of it</p>
 		</div>
-		<div>
-			<input type="text" onchange="changeTitle();" id="TitleInput" placeholder="Website Name">
-			<button class="btn btn-secondary" onclick="resetWebsite();">Reset</button>
+		<div class="config needHidden">
+			<input class="addMargin" type="text" onchange="changeTitle();" id="TitleInput" placeholder="Website Name">
+			<button class="btn btn-secondary addMargin" onclick="resetWebsite();">Reset</button>
 			<br>
-			<input type="text" onchange="changeImage();" id="ImageInput" placeholder="Icon">
-			<button class="btn btn-secondary" onclick="resetIcon();">Reset</button>
+			<input class="addMargin" type="text" onchange="changeImage();" id="ImageInput" placeholder="Icon">
+			<button class="btn btn-secondary addMargin" onclick="resetIcon();">Reset</button>
 		</div>
+		<footer class="needHidden social-media" style="margin: 0.5rem;">
+			<h2>Social Media</h2>
+			<i class="fa-brands fa-github icon"></i> <a href="https://github.com/GamerVerse722">GamerVerse722</a>
+			<br>
+			<i class="fa-brands fa-youtube icon"></i> <a href="https://www.youtube.com/@GamerVerse/featured">Gamer Verse</a>
+			<br>
+			<i class="fa-brands fa-twitch icon"></i> <a href="https://www.twitch.tv/gamer_verse">Gamer_Verse</a>
+			<br>
+			<i class="fa-brands fa-discord icon"></i> <a href="https://discord.gg/AjE6VMmRJ4">Discord Server</a>
+		</footer>
 		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
