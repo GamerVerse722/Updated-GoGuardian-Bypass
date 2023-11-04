@@ -1,4 +1,4 @@
-document.getElementById("submit").onclick = function () {
+function startIframe() {
 	var input = document.getElementById('urlInput');
 	var submit = document.getElementById('submit');
 	var particl = document.getElementById('tsparticles')
