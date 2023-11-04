@@ -21,7 +21,7 @@ https://github.com/ech0devv/GoGuardian-Bypass
 
 Website: https://goguardian-bypass.gamerverses.repl.co
 
-### Bookmarklet Version V1.14 (Copy this code and put it a bookmark):
+### Bookmarklet Version V1.20 (Copy this code and put it a bookmark):
 
 ![Bookmarklet Looks](https://github.com/GamerVerse722/GoGuardian-bypass/blob/main/github/Bookmarklet.png?raw=true)
 
