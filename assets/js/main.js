@@ -159,7 +159,7 @@ function fetchDataAndDownload() {
 	  });
   }
 
-document.getElementById('ManualVersion').innerHTML = "V1.21"
+document.getElementById('ManualVersion').innerHTML = "V1.22"
 
 window.addEventListener('beforeunload', function (e) {
 	e.preventDefault();
@@ -174,5 +174,14 @@ req.onload = function () {
 req.send();
 
 window.onload = function() {
-	document.getElementById('download-html-file').style.visibility = 'visible';
+	let newest = Number(document.getElementById("newestVersion").innerHTML.slice(1))
+	let manual = Number(document.getElementById('ManualVersion').innerHTML.slice(1))
+	console.log(newest)
+	console.log(manual)
+	if (manual < newest) {
+		console.log("updated")
+		document.getElementById('download-html-file').style.visibility = 'visible';
+	} else {
+		document.getElementById('download-html-file').style.visibility = 'hidden';
+	}
 }
