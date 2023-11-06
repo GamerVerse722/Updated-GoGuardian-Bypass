@@ -262,58 +262,65 @@ body{
 
 ::-webkit-scrollbar {
 	width: 12px;
-    background-color: #202324;
-    color: #aba499;
+		background-color: #202324;
+		color: #aba499;
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: #F5F5F5;
+		border-radius: 10px;
+		background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar-corner {
-    background-color: #181a1b;
+		background-color: #181a1b;
 }
 
 ::-webkit-scrollbar-thumb {
 	border-radius: 12px;
-    background-color: #454a4d;
+		background-color: #454a4d;
 }
 
 input {
-    border-radius: 10px;
-    border-width: 2.5px;
-    border-style: solid;
-    background-color: rgb(59, 59, 59);
-    border-color: rgb(113, 113, 113);
-    color: rgb(255,255,255);
+		border-radius: 10px;
+		border-width: 2.5px;
+		border-style: solid;
+		background-color: rgb(59, 59, 59);
+		border-color: rgb(113, 113, 113);
+		color: rgb(255,255,255);
 }
 
 .config {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0.5em;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0.5em;
 }
 
 .addMargin {
-    margin: 0.13rem;
+		margin: 0.13rem;
 }
 
-.icon, label, h2{
-    color: rgb(255,255,255)
+.icon, label, h2, span, p{
+		color: rgb(255,255,255)
 }
 
 .social-media {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+		position: absolute;
+		bottom: 0;
+		left: 0;
 }
 
 .email-area {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+}
+
+.CurrentVersionDiv {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0.5em;
 }</style></head>
 <body>
 <div class="needHidden" id="tsparticles" style="background: #000000;text-align: center;"></div><iframe id="ifr" src="" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:-10;" title="site bypass" visibility="hidden">
@@ -331,7 +338,7 @@ input {
 <div class="needHidden" style="background: rgba(218,218,218,0);margin-top: 50px;">
 <p style="text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);">Drag
 				this link to your
-				bookmarkbar <span id="currentVersion"></span>: <a class="aTag" href="javascript:req = new XMLHttpRequest();req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/request.js');req.onload = function() {	eval(this.responseText + 'codeRunner();');};req.send();" name="this" style="text-align: center;">Bypass on any website</a></p>
+				bookmarkbar <span id="newestVersion"></span>: <a class="aTag" href="javascript:req = new XMLHttpRequest();req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/request.js');req.onload = function() {	eval(this.responseText + 'codeRunner();');};req.send();" name="this" style="text-align: center;">Bypass on any website</a></p>
 <h1 style="text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);">About</h1>
 <p style="text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);">[IMPORTANT
 				NOTE] Some
@@ -370,6 +377,7 @@ input {
 <option value="https://loopover.xyz">Loopover</option>
 <option value="https://paper-io.com">Paper.io</option>
 <option value="https://shapez.io">Shapez</option>
+<option value="https://dimava.github.io/shapez/modZ/">ShapezModZ</option>
 <option value="https://slither.io">Slither.io</option>
 <option value="https://smashkarts.io">Smash Karts</option>
 <option value="https://sword-io-game.herokuapp.com/">Sword Battle</option>
@@ -409,6 +417,11 @@ input {
 <br/>
 <i class="fa-brands fa-discord icon"></i> <a href="https://discord.gg/AjE6VMmRJ4">Discord Server</a>
 </footer>
+<div class="needHidden CurrentVersionDiv">
+<p>Current Version: <span id="ManualVersion"></span>
+<br/>
+<a href="#" id="download-html-file" onclick="fetchDataAndDownload();" style="visibility: hidden;">(Update Available)</a></p>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://unpkg.com/tsparticles@1.34.0/tsparticles.min.js"></script>
@@ -652,6 +665,40 @@ function resetIcon() {
 	}
 }
 
+function fetchDataAndDownload() {
+	// Fetch data from the URL
+	const url = "https://raw.githubusercontent.com/GamerVerse722/Updated-GoGuardian-Bypass/main/github/localVersion.html";
+	const fileName = "LocalVersion.html";
+	fetch(url)
+	  .then(response => response.blob()) // Get the response as Blob
+	  .then(blob => {
+		// Create a Blob from the response data
+		const blobURL = URL.createObjectURL(blob);
+  
+		// Create a download link
+		const downloadLink = document.createElement('a');
+		downloadLink.href = blobURL;
+		downloadLink.download = fileName; // Set the desired file name
+		downloadLink.textContent = 'Click here to download'; // Optional text for the link
+  
+		// Append the download link to the document body
+		document.body.appendChild(downloadLink);
+  
+		// Programmatically trigger a click event on the download link
+		downloadLink.click();
+  
+		// Remove the download link from the document
+		document.body.removeChild(downloadLink);
+  
+		// Revoke the Blob URL to free up resources
+		URL.revokeObjectURL(blobURL);
+	  })
+	  .catch(error => {
+		console.error('Error fetching data:', error);
+	  });
+  }
+
+document.getElementById('ManualVersion').innerHTML = "V1.22"
 
 window.addEventListener('beforeunload', function (e) {
 	e.preventDefault();
@@ -663,5 +710,18 @@ req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypa
 req.onload = function () {
 	eval(this.responseText + 'versionGrabber();');
 };
-req.send();</script></body>
+req.send();
+
+window.onload = function() {
+	let newest = Number(document.getElementById("newestVersion").innerHTML.slice(1))
+	let manual = Number(document.getElementById('ManualVersion').innerHTML.slice(1))
+	console.log(newest)
+	console.log(manual)
+	if (manual < newest) {
+		console.log("updated")
+		document.getElementById('download-html-file').style.visibility = 'visible';
+	} else {
+		document.getElementById('download-html-file').style.visibility = 'hidden';
+	}
+}</script></body>
 </html>

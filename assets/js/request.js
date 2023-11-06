@@ -247,59 +247,66 @@ function codeRunner() {
 "\n" + 
 "::-webkit-scrollbar {\n" + 
 "	width: 12px;\n" + 
-"    background-color: #202324;\n" + 
-"    color: #aba499;\n" + 
+"		background-color: #202324;\n" + 
+"		color: #aba499;\n" + 
 "}\n" + 
 "\n" + 
 "::-webkit-scrollbar-track {\n" + 
-"    border-radius: 10px;\n" + 
-"    background-color: #F5F5F5;\n" + 
+"		border-radius: 10px;\n" + 
+"		background-color: #F5F5F5;\n" + 
 "}\n" + 
 "\n" + 
 "::-webkit-scrollbar-corner {\n" + 
-"    background-color: #181a1b;\n" + 
+"		background-color: #181a1b;\n" + 
 "}\n" + 
 "\n" + 
 "::-webkit-scrollbar-thumb {\n" + 
 "	border-radius: 12px;\n" + 
-"    background-color: #454a4d;\n" + 
+"		background-color: #454a4d;\n" + 
 "}\n" + 
 "\n" + 
 "input {\n" + 
-"    border-radius: 10px;\n" + 
-"    border-width: 2.5px;\n" + 
-"    border-style: solid;\n" + 
-"    background-color: rgb(59, 59, 59);\n" + 
-"    border-color: rgb(113, 113, 113);\n" + 
-"    color: rgb(255,255,255);\n" + 
+"		border-radius: 10px;\n" + 
+"		border-width: 2.5px;\n" + 
+"		border-style: solid;\n" + 
+"		background-color: rgb(59, 59, 59);\n" + 
+"		border-color: rgb(113, 113, 113);\n" + 
+"		color: rgb(255,255,255);\n" + 
 "}\n" + 
 "\n" + 
 ".config {\n" + 
-"    position: absolute;\n" + 
-"    top: 0;\n" + 
-"    right: 0;\n" + 
-"    margin: 0.5em;\n" + 
+"		position: absolute;\n" + 
+"		top: 0;\n" + 
+"		right: 0;\n" + 
+"		margin: 0.5em;\n" + 
 "}\n" + 
 "\n" + 
 ".addMargin {\n" + 
-"    margin: 0.13rem;\n" + 
+"		margin: 0.13rem;\n" + 
 "}\n" + 
 "\n" + 
-".icon, label, h2{\n" + 
-"    color: rgb(255,255,255)\n" + 
+".icon, label, h2, span, p{\n" + 
+"		color: rgb(255,255,255)\n" + 
 "}\n" + 
 "\n" + 
 ".social-media {\n" + 
-"    position: absolute;\n" + 
-"    bottom: 0;\n" + 
-"    left: 0;\n" + 
+"		position: absolute;\n" + 
+"		bottom: 0;\n" + 
+"		left: 0;\n" + 
 "}\n" + 
 "\n" + 
 ".email-area {\n" + 
-"    position: absolute;\n" + 
-"    bottom: 0;\n" + 
-"    right: 0;\n" + 
-"}</style></head><body><div class=needHidden id=tsparticles style=\"background: #000000;text-align: center;\"></div><iframe id=ifr src style=\"position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:-10;\" title=\"site bypass\" visibility=hidden></iframe><div class=needHidden style=\"text-align: center;\"><h1 style=\"margin-top: 75px;font-family: Quicksand, sans-serif;color: rgb(255,255,255);\">GoGuardian Bypasser </h1><p style=\"font-family: Quicksand, sans-serif;color: rgb(255,255,255);\">goguardian more like noguardian amirite </p><input id=urlInput value=https:// type=text></div><div class=needHidden id=buttonDiv style=\"text-align: center;margin-top: 10px;\"><button class=\"btn btn-secondary\" id=submit onclick=startIframe(); style=\"text-align: center;\" type=button>Go!</button></div><div class=needHidden style=\"background: rgba(218,218,218,0);margin-top: 50px;\"><p style=\"text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);\">Drag this link to your bookmarkbar <span id=currentVersion></span>: <a class=aTag href=\"javascript:req = new XMLHttpRequest();req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/request.js');req.onload = function() {	eval(this.responseText + 'codeRunner();');};req.send();\" name=this style=\"text-align: center;\">Bypass on any website</a></p><h1 style=\"text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);\">About</h1><p style=\"text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);\">[IMPORTANT NOTE] Some websites will not work, this is due to website owners being annoying and not letting me embed them. Sorry :3<br><br>This website is a sole proof-of-concept showing just how flawed GoGuardian is. It's literally the most incompetent piece of paid software I may have ever seen.<br>Not only can it be bypassed using a few lines of code, but it can also be outright stopped from sending data to the teachers to track what you're doing, by using AdGuard DNS (94.140.14.14).<br>This is a POC showing how flawed GoGuardian is for the price, and how other, much less expensive, if not, free, options are much better.<br><br><a class=aTag href=https://github.com/Winterfoxxy-0/GoGuardian-Bypass style=\"text-align: center;\">Original GitHub from creator</a></p></div><div class=needHidden style=\"text-align: center;\"><select id=MySelectMenu style=\"border-radius: 10px;border-width: 2.5px;border-style: solid;background-color: rgb(59, 59, 59);border-color: rgb(113, 113, 113);color: rgb(255,255,255);font-family: Quicksand\"><option value=Blank>Options</option><option value=https://defly.io>Defly.io</option><option value=https://diep.io>Diep.io</option><option value=https://drednot.io>Deep Space Airships</option><option value=https://funny-shooter22222.jimrush.repl.co/ >Funny Shooter 2</option><option value=https://jklm.fun>JKLM.FUN</option><option value=https://www.madalingames.com>Madalin Games</option><option value=https://www.madalin-cars-multiplayer.com/webgl/M/mcm-webgl/index.html>Madalin Cars Multiplayer</option><option value=https://www.madalingames.com/madalingames/wp-content/uploads/games/webgl/S/srp2_webgl/index.html> Speed Racing Pro 2</option><option value=https://loopover.xyz>Loopover</option><option value=https://paper-io.com>Paper.io</option><option value=https://shapez.io>Shapez</option><option value=https://slither.io>Slither.io</option><option value=https://smashkarts.io>Smash Karts</option><option value=https://sword-io-game.herokuapp.com/ >Sword Battle</option><option value=https://www.lumpty.com/amusements/Games/Tetris/tetris.html>Tetris</option><option value=https://trex-runner.com>T-Rex Game</option><option value=https://www.twoplayergames.org>TwoPlayerGames</option><option value=https://venge.io>Venge.io</option><option value=https://zombsroyale.io/ >Zombs Royal</option><option value=https://1v1.lol>1v1.lol</option><option value=https://play2048.co>2048</option><option value=https://8ball-pool.io>8 Ball Pool</option></select><button class=\"btn btn-secondary\" id=ListButton onclick=newSrc(); style=\"font-family: Quicksand;\">Go!</button><button class=\"btn btn-secondary\" id=GetLinkButton onclick=getLink(); style=\"font-family: Quicksand;\">Copy</button></div><div class=\"needHidden email-area\" style=\"text-align: center; padding-right: 1em; display: inline-block;\"><a class=aTag href=mailto:gameremailbypass@gmail.com?subject style=\"font-family: Quicksand;\">Send a link to add to toggle</a><p style=\"font-family: Quicksand, sans-serif;color: rgb(255,255,255);\">Not all website will be added<br>Send the full link and and name of it</p></div><div class=\"config needHidden\"><input class=addMargin id=TitleInput onchange=changeTitle(); placeholder=\"Website Name\" type=text><button class=\"btn btn-secondary addMargin\" onclick=resetWebsite();>Reset</button><br><input class=addMargin id=ImageInput onchange=changeImage(); placeholder=Icon type=text><button class=\"btn btn-secondary addMargin\" onclick=resetIcon();>Reset</button></div><footer class=\"needHidden social-media\" style=\"margin: 0.5rem;\"><h2>Social Media</h2><i class=\"fa-brands fa-github icon\"></i> <a href=https://github.com/GamerVerse722>GamerVerse722</a><br><i class=\"fa-brands fa-youtube icon\"></i> <a href=https://www.youtube.com/@GamerVerse/featured>Gamer Verse</a><br><i class=\"fa-brands fa-twitch icon\"></i> <a href=https://www.twitch.tv/gamer_verse>Gamer_Verse</a><br><i class=\"fa-brands fa-discord icon\"></i> <a href=https://discord.gg/AjE6VMmRJ4>Discord Server</a></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js></script><script src=https://unpkg.com/tsparticles@1.34.0/tsparticles.min.js></script><script>\n" + 
+"		position: absolute;\n" + 
+"		bottom: 0;\n" + 
+"		right: 0;\n" + 
+"}\n" + 
+"\n" + 
+".CurrentVersionDiv {\n" + 
+"	position: absolute;\n" + 
+"	top: 0;\n" + 
+"	left: 0;\n" + 
+"	margin: 0.5em;\n" + 
+"}</style></head><body><div class=needHidden id=tsparticles style=\"background: #000000;text-align: center;\"></div><iframe id=ifr src style=\"position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:-10;\" title=\"site bypass\" visibility=hidden></iframe><div class=needHidden style=\"text-align: center;\"><h1 style=\"margin-top: 75px;font-family: Quicksand, sans-serif;color: rgb(255,255,255);\">GoGuardian Bypasser </h1><p style=\"font-family: Quicksand, sans-serif;color: rgb(255,255,255);\">goguardian more like noguardian amirite </p><input id=urlInput value=https:// type=text></div><div class=needHidden id=buttonDiv style=\"text-align: center;margin-top: 10px;\"><button class=\"btn btn-secondary\" id=submit onclick=startIframe(); style=\"text-align: center;\" type=button>Go!</button></div><div class=needHidden style=\"background: rgba(218,218,218,0);margin-top: 50px;\"><p style=\"text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);\">Drag this link to your bookmarkbar <span id=newestVersion></span>: <a class=aTag href=\"javascript:req = new XMLHttpRequest();req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/request.js');req.onload = function() {	eval(this.responseText + 'codeRunner();');};req.send();\" name=this style=\"text-align: center;\">Bypass on any website</a></p><h1 style=\"text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);\">About</h1><p style=\"text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);\">[IMPORTANT NOTE] Some websites will not work, this is due to website owners being annoying and not letting me embed them. Sorry :3<br><br>This website is a sole proof-of-concept showing just how flawed GoGuardian is. It's literally the most incompetent piece of paid software I may have ever seen.<br>Not only can it be bypassed using a few lines of code, but it can also be outright stopped from sending data to the teachers to track what you're doing, by using AdGuard DNS (94.140.14.14).<br>This is a POC showing how flawed GoGuardian is for the price, and how other, much less expensive, if not, free, options are much better.<br><br><a class=aTag href=https://github.com/Winterfoxxy-0/GoGuardian-Bypass style=\"text-align: center;\">Original GitHub from creator</a></p></div><div class=needHidden style=\"text-align: center;\"><select id=MySelectMenu style=\"border-radius: 10px;border-width: 2.5px;border-style: solid;background-color: rgb(59, 59, 59);border-color: rgb(113, 113, 113);color: rgb(255,255,255);font-family: Quicksand\"><option value=Blank>Options</option><option value=https://defly.io>Defly.io</option><option value=https://diep.io>Diep.io</option><option value=https://drednot.io>Deep Space Airships</option><option value=https://funny-shooter22222.jimrush.repl.co/ >Funny Shooter 2</option><option value=https://jklm.fun>JKLM.FUN</option><option value=https://www.madalingames.com>Madalin Games</option><option value=https://www.madalin-cars-multiplayer.com/webgl/M/mcm-webgl/index.html>Madalin Cars Multiplayer</option><option value=https://www.madalingames.com/madalingames/wp-content/uploads/games/webgl/S/srp2_webgl/index.html> Speed Racing Pro 2</option><option value=https://loopover.xyz>Loopover</option><option value=https://paper-io.com>Paper.io</option><option value=https://shapez.io>Shapez</option><option value=https://dimava.github.io/shapez/modZ/ >ShapezModZ</option><option value=https://slither.io>Slither.io</option><option value=https://smashkarts.io>Smash Karts</option><option value=https://sword-io-game.herokuapp.com/ >Sword Battle</option><option value=https://www.lumpty.com/amusements/Games/Tetris/tetris.html>Tetris</option><option value=https://trex-runner.com>T-Rex Game</option><option value=https://www.twoplayergames.org>TwoPlayerGames</option><option value=https://venge.io>Venge.io</option><option value=https://zombsroyale.io/ >Zombs Royal</option><option value=https://1v1.lol>1v1.lol</option><option value=https://play2048.co>2048</option><option value=https://8ball-pool.io>8 Ball Pool</option></select><button class=\"btn btn-secondary\" id=ListButton onclick=newSrc(); style=\"font-family: Quicksand;\">Go!</button><button class=\"btn btn-secondary\" id=GetLinkButton onclick=getLink(); style=\"font-family: Quicksand;\">Copy</button></div><div class=\"needHidden email-area\" style=\"text-align: center; padding-right: 1em; display: inline-block;\"><a class=aTag href=mailto:gameremailbypass@gmail.com?subject style=\"font-family: Quicksand;\">Send a link to add to toggle</a><p style=\"font-family: Quicksand, sans-serif;color: rgb(255,255,255);\">Not all website will be added<br>Send the full link and and name of it</p></div><div class=\"config needHidden\"><input class=addMargin id=TitleInput onchange=changeTitle(); placeholder=\"Website Name\" type=text><button class=\"btn btn-secondary addMargin\" onclick=resetWebsite();>Reset</button><br><input class=addMargin id=ImageInput onchange=changeImage(); placeholder=Icon type=text><button class=\"btn btn-secondary addMargin\" onclick=resetIcon();>Reset</button></div><footer class=\"needHidden social-media\" style=\"margin: 0.5rem;\"><h2>Social Media</h2><i class=\"fa-brands fa-github icon\"></i> <a href=https://github.com/GamerVerse722>GamerVerse722</a><br><i class=\"fa-brands fa-youtube icon\"></i> <a href=https://www.youtube.com/@GamerVerse/featured>Gamer Verse</a><br><i class=\"fa-brands fa-twitch icon\"></i> <a href=https://www.twitch.tv/gamer_verse>Gamer_Verse</a><br><i class=\"fa-brands fa-discord icon\"></i> <a href=https://discord.gg/AjE6VMmRJ4>Discord Server</a></footer><div class=\"needHidden CurrentVersionDiv\"><p>Current Version: <span id=ManualVersion></span><br><a href=# id=download-html-file onclick=fetchDataAndDownload(); style=\"visibility: hidden;\">(Update Available)</a></p></div><script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js></script><script src=https://unpkg.com/tsparticles@1.34.0/tsparticles.min.js></script><script>\n" + 
 "/*!\n" + 
 "  * Bootstrap v5.1.3 (https://getbootstrap.com/)\n" + 
 "  * Copyright 2011-2021 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)\n" + 
@@ -537,6 +544,40 @@ function codeRunner() {
 "	}\n" + 
 "}\n" + 
 "\n" + 
+"function fetchDataAndDownload() {\n" + 
+"	// Fetch data from the URL\n" + 
+"	const url = \"https://raw.githubusercontent.com/GamerVerse722/Updated-GoGuardian-Bypass/main/github/localVersion.html\";\n" + 
+"	const fileName = \"LocalVersion.html\";\n" + 
+"	fetch(url)\n" + 
+"	  .then(response => response.blob()) // Get the response as Blob\n" + 
+"	  .then(blob => {\n" + 
+"		// Create a Blob from the response data\n" + 
+"		const blobURL = URL.createObjectURL(blob);\n" + 
+"  \n" + 
+"		// Create a download link\n" + 
+"		const downloadLink = document.createElement('a');\n" + 
+"		downloadLink.href = blobURL;\n" + 
+"		downloadLink.download = fileName; // Set the desired file name\n" + 
+"		downloadLink.textContent = 'Click here to download'; // Optional text for the link\n" + 
+"  \n" + 
+"		// Append the download link to the document body\n" + 
+"		document.body.appendChild(downloadLink);\n" + 
+"  \n" + 
+"		// Programmatically trigger a click event on the download link\n" + 
+"		downloadLink.click();\n" + 
+"  \n" + 
+"		// Remove the download link from the document\n" + 
+"		document.body.removeChild(downloadLink);\n" + 
+"  \n" + 
+"		// Revoke the Blob URL to free up resources\n" + 
+"		URL.revokeObjectURL(blobURL);\n" + 
+"	  })\n" + 
+"	  .catch(error => {\n" + 
+"		console.error('Error fetching data:', error);\n" + 
+"	  });\n" + 
+"  }\n" + 
+"\n" + 
+"document.getElementById('ManualVersion').innerHTML = \"V1.22\"\n" + 
 "\n" + 
 "window.addEventListener('beforeunload', function (e) {\n" + 
 "	e.preventDefault();\n" + 
@@ -548,7 +589,20 @@ function codeRunner() {
 "req.onload = function () {\n" + 
 "	eval(this.responseText + 'versionGrabber();');\n" + 
 "};\n" + 
-"req.send();</script></body></html>\n";
+"req.send();\n" + 
+"\n" + 
+"window.onload = function() {\n" + 
+"	let newest = Number(document.getElementById(\"newestVersion\").innerHTML.slice(1))\n" + 
+"	let manual = Number(document.getElementById('ManualVersion').innerHTML.slice(1))\n" + 
+"	console.log(newest)\n" + 
+"	console.log(manual)\n" + 
+"	if (manual < newest) {\n" + 
+"		console.log(\"updated\")\n" + 
+"		document.getElementById('download-html-file').style.visibility = 'visible';\n" + 
+"	} else {\n" + 
+"		document.getElementById('download-html-file').style.visibility = 'hidden';\n" + 
+"	}\n" + 
+"}</script></body></html>\n";
     document.write(variable);
     document.title = title_Name;
     document.close();
