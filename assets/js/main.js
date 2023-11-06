@@ -126,6 +126,40 @@ function resetIcon() {
 	}
 }
 
+function fetchDataAndDownload() {
+	// Fetch data from the URL
+	const url = "https://raw.githubusercontent.com/GamerVerse722/Updated-GoGuardian-Bypass/main/github/localVersion.html";
+	const fileName = "LocalVersion.html";
+	fetch(url)
+	  .then(response => response.blob()) // Get the response as Blob
+	  .then(blob => {
+		// Create a Blob from the response data
+		const blobURL = URL.createObjectURL(blob);
+  
+		// Create a download link
+		const downloadLink = document.createElement('a');
+		downloadLink.href = blobURL;
+		downloadLink.download = fileName; // Set the desired file name
+		downloadLink.textContent = 'Click here to download'; // Optional text for the link
+  
+		// Append the download link to the document body
+		document.body.appendChild(downloadLink);
+  
+		// Programmatically trigger a click event on the download link
+		downloadLink.click();
+  
+		// Remove the download link from the document
+		document.body.removeChild(downloadLink);
+  
+		// Revoke the Blob URL to free up resources
+		URL.revokeObjectURL(blobURL);
+	  })
+	  .catch(error => {
+		console.error('Error fetching data:', error);
+	  });
+  }
+
+document.getElementById('ManualVersion').innerHTML = "V1.21"
 
 window.addEventListener('beforeunload', function (e) {
 	e.preventDefault();
@@ -138,3 +172,7 @@ req.onload = function () {
 	eval(this.responseText + 'versionGrabber();');
 };
 req.send();
+
+window.onload = function() {
+	document.getElementById('download-html-file').style.visibility = 'visible';
+}

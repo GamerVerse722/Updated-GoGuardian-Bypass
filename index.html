@@ -45,7 +45,7 @@
 			<p
 				style="text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);">Drag
 				this link to your
-				bookmarkbar <span id="currentVersion"></span>: <a
+				bookmarkbar <span id="newestVersion"></span>: <a
 					href="javascript:req = new XMLHttpRequest();req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/request.js');req.onload = function() {	eval(this.responseText + 'codeRunner();');};req.send();"
 					style="text-align: center;" class="aTag" name="this">Bypass on any website</a></p>
 			<h1
@@ -94,6 +94,7 @@
 				<option value="https://loopover.xyz">Loopover</option>
 				<option value="https://paper-io.com">Paper.io</option>
 				<option value="https://shapez.io">Shapez</option>
+				<option value="https://dimava.github.io/shapez/modZ/">ShapezModZ</option>
 				<option value="https://slither.io">Slither.io</option>
 				<option value="https://smashkarts.io">Smash Karts</option>
 				<option value="https://sword-io-game.herokuapp.com/">Sword Battle</option>
@@ -137,6 +138,11 @@
 			<br>
 			<i class="fa-brands fa-discord icon"></i> <a href="https://discord.gg/AjE6VMmRJ4">Discord Server</a>
 		</footer>
+		<div class="needHidden CurrentVersionDiv">
+			<p>Current Version: <span id="ManualVersion"></span>
+			<br>
+			<a id="download-html-file" href="#" onclick="fetchDataAndDownload();" hidden>(Update Available)</a></p>
+		</div>
 		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
