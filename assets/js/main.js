@@ -159,7 +159,7 @@ function fetchDataAndDownload() {
 	  });
   }
 
-document.getElementById('ManualVersion').innerHTML = "V1.22"
+document.getElementById('ManualVersion').innerHTML = "V1.23"
 
 window.addEventListener('beforeunload', function (e) {
 	e.preventDefault();
