@@ -1,9 +1,40 @@
+console.clear();
+
+function checkTitle() {
+	let dataSaved = localStorage.getItem("ChangedTitle");
+
+	if (dataSaved == null || dataSaved == Object || dataSaved == 'null') {
+		localStorage.setItem("ChangedTitle", 'null');
+
+	}
+	
+	if (dataSaved != null && dataSaved != "null") {
+		document.getElementById("TitleInput").value = dataSaved;
+		document.title = dataSaved;
+	}
+}
+
+checkTitle();
+
+function checkIcon() {
+	let dataSaved = localStorage.getItem("ImageURL");
+
+	if (dataSaved == null || dataSaved == Object || dataSaved == 'null') {
+		localStorage.setItem("ImageURL", 'null');
+	}
+
+	if (dataSaved != null && dataSaved != 'null') {
+		document.getElementById("ImageInput").value = dataSaved;
+		changeImage(dataSaved);
+	}
+}
+
+checkIcon();
+
 function startIframe() {
 	var input = document.getElementById('urlInput');
-	var submit = document.getElementById('submit');
 	var particl = document.getElementById('tsparticles')
 	var ifr = document.getElementById('ifr');
-	var cmp = document.getElementById('compatibilityBox');
 
 	[].forEach.call(document.querySelectorAll('.needHidden'), function (el) {
 		el.remove();
@@ -18,12 +49,9 @@ function startIframe() {
 
 function newSrc() {
 	var e = document.getElementById("MySelectMenu");
-	var newSrc = e.options[e.selectedIndex].value;
-	var input = document.getElementById('urlInput');
-	var submit = document.getElementById('submit');
+	var newSrc = e.options[e.selectedIndex].getAttribute("href");
 	var particl = document.getElementById('tsparticles')
 	var ifr = document.getElementById('ifr');
-	var cmp = document.getElementById('compatibilityBox');
 
 	if (newSrc != "Blank") {
 		[].forEach.call(document.querySelectorAll('.needHidden'), function (el) {
@@ -65,15 +93,15 @@ function copyTextToClipboard(text) {
 		return;
 	}
 	navigator.clipboard.writeText(text).then(function () {
-		console.log('Async: Copying to clipboard was successful!');
+		console.log('Async: Successful '+ text +' was copied to clipboard!');
 	}, function (err) {
-		console.error('Async: Could not copy text: ', err);
+		console.error('Async: Could not copy '+ text +' to clipboard: ', err);
 	});
 }
 
 function getLink() {
 	var e = document.getElementById("MySelectMenu");
-	var newSrc = e.options[e.selectedIndex].value;
+	var newSrc = e.options[e.selectedIndex].getAttribute("href");
 
 	if (newSrc != "Blank") {
 		var myClipboard = newSrc;
@@ -82,25 +110,34 @@ function getLink() {
 }
 
 function changeTitle() {
-	var titleChange = document.getElementById("TitleInput");
-	document.title = titleChange.value;
+	var titleChange = document.getElementById("TitleInput").value;
+	localStorage.setItem("ChangedTitle", titleChange)
+	document.title = titleChange;
 }
 
 function isImage(url) {
 	return /\.(jpg|jpeg|png|webp|avif|gif|svg|ico)$/.test(url);
 }
 
-function changeImage() {
-	var imageChange = document.getElementById("ImageInput");
-	if (isImage(imageChange.value)) {
+function changeImage(custom = false) {
+	if (custom == false) {
+		var imageURL = document.getElementById("ImageInput").value;
+	} else {
+		var imageURL = custom;
+	}
+
+	if (isImage(imageURL)) {
 		var existingFavicon = document.querySelector('link[rel="shortcut icon"]');
 		var newFavicon = document.createElement('link');
 		newFavicon.rel = 'shortcut icon';
 		newFavicon.type = 'image/jpeg';
-		newFavicon.href = imageChange.value;
-	
+		newFavicon.href = imageURL;
+		
+		localStorage.setItem("ImageURL", imageURL)
+
 		if (existingFavicon) {
 			existingFavicon.href = newFavicon.href;
+
 		} else {
 			document.head.appendChild(newFavicon);
 		}
@@ -109,6 +146,7 @@ function changeImage() {
 
 function resetWebsite() {
 	document.getElementById('TitleInput').value = "";
+	localStorage.setItem("ChangedTitle", 'null')
 	document.title = "Goguardian Bypass"
 }
 
@@ -118,6 +156,8 @@ function resetIcon() {
 	var newFavicon = document.createElement('link');
 	newFavicon.rel = 'shortcut icon';
 	newFavicon.href = 'assets/image/Logo.JPG';
+
+	localStorage.setItem("ImageURL", null)
 
 	if (existingFavicon) {
 		existingFavicon.href = newFavicon.href;
@@ -159,12 +199,7 @@ function fetchDataAndDownload() {
 	  });
   }
 
-document.getElementById('ManualVersion').innerHTML = "V1.23"
-
-window.addEventListener('beforeunload', function (e) {
-	e.preventDefault();
-	e.returnValue = '';
-});
+document.getElementById('ManualVersion').innerHTML = "V1.24"
 
 req = new XMLHttpRequest();
 req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/currentVersion.js');
@@ -173,11 +208,16 @@ req.onload = function () {
 };
 req.send();
 
+window.addEventListener('beforeunload', function (e) {
+	e.preventDefault();
+	e.returnValue = '';
+});
+
 window.onload = function() {
 	let newest = Number(document.getElementById("newestVersion").innerHTML.slice(1))
 	let manual = Number(document.getElementById('ManualVersion').innerHTML.slice(1))
-	console.log(newest)
-	console.log(manual)
+	console.log('Newest Version Avaliable: ' + newest)
+	console.log('Current Version: ' + manual)
 	if (manual < newest) {
 		console.log("updated")
 		document.getElementById('download-html-file').style.visibility = 'visible';
