@@ -7,14 +7,12 @@ function checkTitle() {
 		localStorage.setItem("ChangedTitle", 'null');
 
 	}
-	
+
 	if (dataSaved != null && dataSaved != "null") {
 		document.getElementById("TitleInput").value = dataSaved;
 		document.title = dataSaved;
 	}
 }
-
-checkTitle();
 
 function checkIcon() {
 	let dataSaved = localStorage.getItem("ImageURL");
@@ -28,8 +26,6 @@ function checkIcon() {
 		changeImage(dataSaved);
 	}
 }
-
-checkIcon();
 
 function startIframe() {
 	var input = document.getElementById('urlInput');
@@ -93,9 +89,9 @@ function copyTextToClipboard(text) {
 		return;
 	}
 	navigator.clipboard.writeText(text).then(function () {
-		console.log('Async: Successful '+ text +' was copied to clipboard!');
+		console.log('Async: Successful ' + text + ' was copied to clipboard!');
 	}, function (err) {
-		console.error('Async: Could not copy '+ text +' to clipboard: ', err);
+		console.error('Async: Could not copy ' + text + ' to clipboard: ', err);
 	});
 }
 
@@ -132,7 +128,7 @@ function changeImage(custom = false) {
 		newFavicon.rel = 'shortcut icon';
 		newFavicon.type = 'image/jpeg';
 		newFavicon.href = imageURL;
-		
+
 		localStorage.setItem("ImageURL", imageURL)
 
 		if (existingFavicon) {
@@ -171,35 +167,93 @@ function fetchDataAndDownload() {
 	const url = "https://raw.githubusercontent.com/GamerVerse722/Updated-GoGuardian-Bypass/main/github/localVersion.html";
 	const fileName = "LocalVersion.html";
 	fetch(url)
-	  .then(response => response.blob()) // Get the response as Blob
-	  .then(blob => {
-		// Create a Blob from the response data
-		const blobURL = URL.createObjectURL(blob);
-  
-		// Create a download link
-		const downloadLink = document.createElement('a');
-		downloadLink.href = blobURL;
-		downloadLink.download = fileName; // Set the desired file name
-		downloadLink.textContent = 'Click here to download'; // Optional text for the link
-  
-		// Append the download link to the document body
-		document.body.appendChild(downloadLink);
-  
-		// Programmatically trigger a click event on the download link
-		downloadLink.click();
-  
-		// Remove the download link from the document
-		document.body.removeChild(downloadLink);
-  
-		// Revoke the Blob URL to free up resources
-		URL.revokeObjectURL(blobURL);
-	  })
-	  .catch(error => {
-		console.error('Error fetching data:', error);
-	  });
-  }
+		.then(response => response.blob()) // Get the response as Blob
+		.then(blob => {
+			// Create a Blob from the response data
+			const blobURL = URL.createObjectURL(blob);
 
-document.getElementById('ManualVersion').innerHTML = "V1.24"
+			// Create a download link
+			const downloadLink = document.createElement('a');
+			downloadLink.href = blobURL;
+			downloadLink.download = fileName; // Set the desired file name
+			downloadLink.textContent = 'Click here to download'; // Optional text for the link
+
+			// Append the download link to the document body
+			document.body.appendChild(downloadLink);
+
+			// Programmatically trigger a click event on the download link
+			downloadLink.click();
+
+			// Remove the download link from the document
+			document.body.removeChild(downloadLink);
+
+			// Revoke the Blob URL to free up resources
+			URL.revokeObjectURL(blobURL);
+		})
+		.catch(error => {
+			console.error('Error fetching data:', error);
+		});
+}
+
+function toggleVisablility(changeId) {
+	var change = document.getElementById(changeId);
+	if (change.style.display == 'block') {
+		change.style.display = 'none'
+	} else {
+		change.style.display = 'block'
+	}
+}
+
+
+function testDynamic(markId, localDataId, hideSection, bootmode = false, runFunction = false) {
+	console.log(markId, localDataId, hideSection, bootmode, runFunction)
+	let checkMark = document.getElementById(markId);
+	if (bootmode == false) {
+		if (checkMark.checked == true) {
+			localStorage.setItem(localDataId, 'checked');
+
+		} else if (checkMark.checked == false) {
+			localStorage.setItem(localDataId, 'unchecked');
+		}
+	}
+
+	let dataSaved = localStorage.getItem(localDataId);
+
+	if (dataSaved == null || dataSaved == Object || dataSaved == 'null') {
+		localStorage.setItem(localDataId, 'checked');
+		checkMark.checked = true;
+		if (runFunction != false) {
+			loadBackground();
+		}
+	}
+
+	if (dataSaved != null && dataSaved != "null") {
+		var social = document.getElementById(hideSection);
+
+		if (dataSaved == 'checked') {
+			if (runFunction != false) {
+				loadBackground();
+			}
+			checkMark.checked = true;
+			localStorage.setItem(localDataId, 'checked');
+			social.style.display = 'block';
+		}
+		else if (dataSaved == 'unchecked') {
+			checkMark.checked = false;
+			localStorage.setItem(localDataId, 'unchecked');
+			social.style.display = 'none';
+		}
+	}
+}
+
+checkTitle();
+checkIcon();
+testDynamic('toggleBg', 'BackgroundAnimation', 'tsparticles', bootmode = true, runFunction = 'loadBackground');
+testDynamic('toggleSc', 'SocialMedia', 'socialMedia', bootmode = true);
+testDynamic('toggleEm', 'EmailMenu', 'contactSection', bootmode = true);
+testDynamic('toggleAb', 'AboutSection', 'aboutSection', bootmode = true);
+
+document.getElementById('ManualVersion').innerHTML = "V1.25"
 
 req = new XMLHttpRequest();
 req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/currentVersion.js');
@@ -213,7 +267,7 @@ window.addEventListener('beforeunload', function (e) {
 	e.returnValue = '';
 });
 
-window.onload = function() {
+window.onload = function () {
 	let newest = Number(document.getElementById("newestVersion").innerHTML.slice(1))
 	let manual = Number(document.getElementById('ManualVersion').innerHTML.slice(1))
 	console.log('Newest Version Avaliable: ' + newest)

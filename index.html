@@ -49,6 +49,7 @@
 				bookmarkbar <span id="newestVersion"></span>: <a
 					href="javascript:req = new XMLHttpRequest();req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/request.js');req.onload = function() {	eval(this.responseText + 'codeRunner();');};req.send();"
 					style="text-align: center;" class="aTag" name="this">Bypass on any website</a></p>
+			<div id="aboutSection">
 			<h1
 				style="text-align: center;font-family: Quicksand, sans-serif;color: rgb(255,255,255);">About</h1>
 			<p
@@ -71,7 +72,7 @@
 				expensive, if not, free, options are much better.<br><br><a class="aTag"
 					href="https://github.com/Winterfoxxy-0/GoGuardian-Bypass"
 					style="text-align: center;">Original GitHub
-					from creator</a></p>
+					from creator</a></p></div>
 		</div>
 		<!-- Work in Progress -->
 
@@ -122,8 +123,7 @@
 			<button class="btn btn-secondary" onclick="getLink();" id="GetLinkButton"
 				style="font-family: Quicksand;">Copy</button>
 		</div>
-		<div class="needHidden email-area"
-			style="text-align: center; padding-right: 1em; display: inline-block;">
+		<div class="needHidden email-area" id="contactSection" style="text-align: center; padding-right: 1em; display: inline-block;">
 			<a class="aTag" style="font-family: Quicksand;"
 				href=mailto:gameremailbypass@gmail.com?subject>Send a link to
 				add to toggle</a>
@@ -132,15 +132,26 @@
 				full link and and name of it</p>
 		</div>
 		<div class="config needHidden">
-			<input class="addMargin" type="text" onchange="changeTitle();" id="TitleInput" placeholder="Website Name">
-			<button class="btn btn-secondary addMargin" onclick="resetWebsite();">Reset</button>
-			<br>
-			<input class="addMargin" type="text" onchange="changeImage();" id="ImageInput" placeholder="Icon">
-			<button class="btn btn-secondary addMargin" onclick="resetIcon();">Reset</button>
-			<br>
-			<button class="btn btn-secondary addMargin" onclick="fetchDataAndDownload();">Download Local Version</button>
+			<i class="fa-solid fa-gear fa-lg icon shift" onclick="toggleVisablility('toggleConfig');"></i>
+			<div id="toggleConfig" style="display: none;">
+				<input class="addMargin" type="text" onchange="changeTitle();" id="TitleInput" placeholder="Website Name">
+				<button class="btn btn-secondary addMargin" onclick="resetWebsite();">Reset</button>
+				<br>
+				<input class="addMargin" type="text" onchange="changeImage();" id="ImageInput" placeholder="Icon">
+				<button class="btn btn-secondary addMargin" onclick="resetIcon();">Reset</button>
+				<br>
+				<button class="btn btn-secondary addMargin" onclick="fetchDataAndDownload();">Download Local Version</button>
+				<br>
+				<label>Toggle Background Animation: <input class="btn btn-secondary" id="toggleBg" type="checkbox" onchange="testDynamic('toggleBg', 'BackgroundAnimation', 'tsparticles', bootMode=false, runFunction='loadBackground');"></label>
+				<br>
+				<label>Toggle Social Media Menu: <input class="btn btn-secondary" id="toggleSc" type="checkbox" onchange="testDynamic('toggleSc', 'SocialMedia', 'socialMedia');"></label>
+				<br>
+				<label>Toggle About Section: <input class="btn btn-secondary" id="toggleAb" type="checkbox" onchange="testDynamic('toggleAb', 'AboutSection', 'aboutSection');"></label>
+				<br>
+				<label>Toggle Email Menu: <input class="btn btn-secondary" id="toggleEm" type="checkbox" onchange="testDynamic('toggleEm', 'EmailMenu', 'contactSection');"></label>
+			</div>
 		</div>
-		<footer class="needHidden social-media" style="margin: 0.5rem;">
+		<footer class="needHidden social-media" id="socialMedia" style="margin: 0.5rem;">
 			<h2>Social Media</h2>
 			<i class="fa-brands fa-github icon"></i> <a href="https://github.com/GamerVerse722">GamerVerse722</a>
 			<br>

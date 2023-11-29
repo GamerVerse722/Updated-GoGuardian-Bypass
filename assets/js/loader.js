@@ -1,102 +1,104 @@
-tsParticles.load("tsparticles",{
-  "background": {
-    "color": {
-      "value": "#0d0d0d"
-    },
-    "position": "50% 50%",
-    "repeat": "no-repeat",
-    "size": "cover"
-  },
-  "fullScreen": {
-    "enable": true,
-    "zIndex": 1
-  },
-  "interactivity": {
-    "events": {
-      "onClick": {
-        "enable": true,
-        "mode": "push"
+function loadBackground() {
+  tsParticles.load("tsparticles",{
+    "background": {
+      "color": {
+        "value": "#0d0d0d"
       },
-      "onHover": {
-        "enable": true,
-        "mode": "grab",
-        "parallax": {
+      "position": "50% 50%",
+      "repeat": "no-repeat",
+      "size": "cover"
+    },
+    "fullScreen": {
+      "enable": true,
+      "zIndex": 1
+    },
+    "interactivity": {
+      "events": {
+        "onClick": {
           "enable": true,
-          "force": 20
+          "mode": "push"
+        },
+        "onHover": {
+          "enable": true,
+          "mode": "grab",
+          "parallax": {
+            "enable": true,
+            "force": 20
+          }
+        }
+      },
+      "modes": {
+        "bubble": {
+          "distance": 400,
+          "duration": 2,
+          "opacity": 0.8,
+          "size": 40
+        },
+        "grab": {
+          "distance": 300
         }
       }
     },
-    "modes": {
-      "bubble": {
-        "distance": 400,
-        "duration": 2,
-        "opacity": 0.8,
-        "size": 40
-      },
-      "grab": {
-        "distance": 300
-      }
-    }
-  },
-  "particles": {
-    "color": {
-      "value": "#ffffff"
-    },
-    "links": {
+    "particles": {
       "color": {
         "value": "#ffffff"
       },
-      "distance": 150,
-      "enable": true,
-      "opacity": 0.4
-    },
-    "move": {
-      "attract": {
-        "rotate": {
-          "x": 600,
-          "y": 1200
+      "links": {
+        "color": {
+          "value": "#ffffff"
+        },
+        "distance": 150,
+        "enable": true,
+        "opacity": 0.4
+      },
+      "move": {
+        "attract": {
+          "rotate": {
+            "x": 600,
+            "y": 1200
+          }
+        },
+        "enable": true,
+        "outModes": {
+          "bottom": "out",
+          "left": "out",
+          "right": "out",
+          "top": "out"
         }
       },
-      "enable": true,
-      "outModes": {
-        "bottom": "out",
-        "left": "out",
-        "right": "out",
-        "top": "out"
-      }
-    },
-    "number": {
-      "density": {
-        "enable": true
-      }
-    },
-    "opacity": {
-      "random": {
-        "enable": true
+      "number": {
+        "density": {
+          "enable": true
+        }
       },
-      "value": {
-        "min": 0.1,
-        "max": 0.5
+      "opacity": {
+        "random": {
+          "enable": true
+        },
+        "value": {
+          "min": 0.1,
+          "max": 0.5
+        },
+        "animation": {
+          "enable": true,
+          "speed": 3,
+          "minimumValue": 0.1
+        }
       },
-      "animation": {
-        "enable": true,
-        "speed": 3,
-        "minimumValue": 0.1
-      }
-    },
-    "size": {
-      "random": {
-        "enable": false
-      },
-      "value": {
-        "min": 1,
-        "max": 5
-      },
-      "animation": {
-        "enable": true,
-        "speed": 20,
-        "minimumValue": 0.1
+      "size": {
+        "random": {
+          "enable": false
+        },
+        "value": {
+          "min": 1,
+          "max": 5
+        },
+        "animation": {
+          "enable": true,
+          "speed": 20,
+          "minimumValue": 0.1
+        }
       }
     }
-  }
-});
+  });
+}
