@@ -17,7 +17,7 @@
 		<link rel="stylesheet" href="assets/css/Toggle-Switch-1.css">
 		<link rel="stylesheet" href="assets/css/Toggle-Switch.css">
 		<link rel="stylesheet" href="assets/css/Toggle-Switches.css">
-		<link rel="stylesheet" href="assets/css/web.css">
+		<link rel="stylesheet" href="assets/css/web.css" class="needHidden">
 	</head>
 
 	<body>
@@ -39,7 +39,7 @@
 		</div>
 		<div class="needHidden" id="buttonDiv"
 			style="text-align: center;margin-top: 10px;"><button
-				class="btn btn-secondary" id="submit" type="button" onclick="startIframe();"
+				class="btn btn-secondary" id="submit" type="button" onclick="url_input();"
 				style="text-align: center;">Go!</button></div>
 		<div class="needHidden"
 			style="background: rgba(218,218,218,0);margin-top: 50px;">
@@ -80,21 +80,23 @@
 			<select id="MySelectMenu"
 				style="border-radius: 10px;border-width: 2.5px;border-style: solid;background-color: rgb(59, 59, 59);border-color: rgb(113, 113, 113);color: rgb(255,255,255);font-family: Quicksand">
 				<option href="Blank">Options</option>
+				<option href="https://www.twoplayergames.org/gameframe/basket-random">Basket Random</option>
+				<option href="https://www.twoplayergames.org/gameframe/boxing-random?_gl=1*1biaxnl*_up*mq..*_ga*mjkxmzq3mtq5lje3mdi4ota1nza.*_ga_lsbvfhp4vg*mtcwmjg5mdu2os4xljaumtcwmjg5mdu2os4wljauma..">Boxing Random</option>
+				<option href="https://files.twoplayergames.org/files/games/mobile/o1/Connect_4/index.html">Connect 4</option>
+				<option href="https://slopegame.online/death-run-3d.embed">Death Run 3D</option>
 				<option href="https://defly.io">Defly.io</option>
 				<option href="https://diep.io">Diep.io</option>
 				<option href="https://drednot.io">Deep Space Airships</option>
 				<option href="https://drift-hunters.co/drift-hunters">Drift Hunters</option>
 				<option href="https://funny-shooter22222.jimrush.repl.co/">Funny Shooter 2</option>
+				<option href="https://www.twoplayergames.org/gameframe/get-on-top">Get On Top</option>
+				<option href="https://www.twoplayergames.org/gameframe/giant-tic-tac-toe">Giant Tic Tac Toe</option>
 				<option href="https://jklm.fun">JKLM.FUN</option>
+				<option href="https://krunker.io">Krunker</option>
 				<option href="https://www.madalingames.com">Madalin Games</option>
-				<option
-				href="https://www.madalin-cars-multiplayer.com/webgl/M/mcm-webgl/index.html">Madalin
-					Cars
-					Multiplayer</option>
+				<option href="https://www.madalin-cars-multiplayer.com/webgl/M/mcm-webgl/index.html">Madalin Cars Multiplayer</option>
 				<option href="https://mope.io">Mope.io</option>
-				<option
-				href="https://www.madalingames.com/madalingames/wp-content/uploads/games/webgl/S/srp2_webgl/index.html">
-					Speed Racing Pro 2</option>
+				<option href="https://www.madalingames.com/madalingames/wp-content/uploads/games/webgl/S/srp2_webgl/index.html">Speed Racing Pro 2</option>
 				<option href="https://fireboyand-watergirl.co">Fireboy and Watergirl 1</option>
 				<option href="https://fireboyand-watergirl.co/fireboy-and-watergirl-2-light-temple">Fireboy and Watergirl 2</option>
 				<option href="https://fireboyand-watergirl.co/fireboy-and-watergirl-3-ice-temple">Fireboy and Watergirl 3</option>
@@ -106,22 +108,31 @@
 				<option href="https://shapez.io">Shapez</option>
 				<option href="https://dimava.github.io/shapez/modZ/">ShapezModZ</option>
 				<option href="https://slither.io">Slither.io</option>
+				<option href="https://kdata1.com/2020/05/slope/">Slope</option>
 				<option href="https://smashkarts.io">Smash Karts</option>
+				<option href="https://www.twoplayergames.org/gameframe/soccer-random">Soccer Random</option>
 				<option href="https://sword-io-game.herokuapp.com/">Sword Battle</option>
 				<option href="https://www.lumpty.com/amusements/Games/Tetris/tetris.html">Tetris</option>
+				<option href="https://consentcdn.cookiebot.com/sdk/bc-v4.min.html">Tic Tac Toe Classic</option>
+				<option href="https://www.twoplayergames.org/gameframe/two-ball-3d">Two Ball 3D</option>
 				<option href="https://trex-runner.com">T-Rex Game</option>
 				<option href="https://www.twoplayergames.org">TwoPlayerGames</option>
+				<option href="https://consentcdn.cookiebot.com/sdk/bc-v4.min.html">Ultimate Tic Tac Toe</option>
+				<option href="https://www.twoplayergames.org/gameframe/uno-online">UNO Online</option>
 				<option href="https://venge.io">Venge.io</option>
+				<option href="https://www.twoplayergames.org/gameframe/volley-random">Volley Random</option>
 				<option href="https://zombs.io">Zombs.io</option>
 				<option href="https://zombsroyale.io/">Zombs Royal</option>
 				<option href="https://1v1.lol">1v1.lol</option>
 				<option href="https://play2048.co">2048</option>
 				<option href="https://8ball-pool.io">8 Ball Pool</option>
 			</select>
-			<button class="btn btn-secondary" onclick="newSrc();" id="ListButton"
+			<button class="btn btn-secondary" onclick="options_input();" id="ListButton"
 				style="font-family: Quicksand;">Go!</button>
 			<button class="btn btn-secondary" onclick="getLink();" id="GetLinkButton"
 				style="font-family: Quicksand;">Copy</button>
+			<button class="btn btn-secondary" onclick="addFavorites();" id="AddFavoritesButton"
+				style="font-family: Quicksand;">Add To Favorites</button>
 		</div>
 		<div class="needHidden email-area" id="contactSection" style="text-align: center; padding-right: 1em; display: inline-block;">
 			<a class="aTag" style="font-family: Quicksand;"
@@ -149,6 +160,8 @@
 				<label>Toggle About Section: <input class="btn btn-secondary" id="toggleAb" type="checkbox" onchange="testDynamic('toggleAb', 'AboutSection', 'aboutSection');"></label>
 				<br>
 				<label>Toggle Email Menu: <input class="btn btn-secondary" id="toggleEm" type="checkbox" onchange="testDynamic('toggleEm', 'EmailMenu', 'contactSection');"></label>
+				<br>
+				<label>Toggle Favorites Menu: <input class="btn btn-secondary" id="toggleFa" type="checkbox" onchange="testDynamic('toggleFa', 'FavoritesMenu', 'favoritesMenu', bootMode=false, runFunction='checkFavorites');"></label>
 			</div>
 		</div>
 		<footer class="needHidden social-media" id="socialMedia" style="margin: 0.5rem;">
@@ -161,13 +174,20 @@
 			<br>
 			<i class="fa-brands fa-discord icon"></i> <a href="https://discord.gg/AjE6VMmRJ4">Discord Server</a>
 		</footer>
-		<div class="needHidden CurrentVersionDiv">
-			<p>Current Version: <span id="ManualVersion"></span>
-			<br>
-			<a id="download-html-file" href="#" onclick="fetchDataAndDownload();" style="visibility: hidden;">(Update Available)</a></p>
+		<div class="needHidden TopLeftMove">
+			<div class="CurrentVersionDiv">
+				<p>Current Version: <span id="ManualVersion"></span>
+					<br>
+					<a id="download-html-file" href="#" onclick="fetchDataAndDownload();" style="visibility: hidden;">(Update Available)</a></p>
+			</div>
+			<div id="favoritesMenu" style="width: 15rem; border: solid white 1px;">
+				<h2 style="text-align: center;">Favorites</h2>
+				<div id="container">
+				</div>
+				<button onclick="resetFavorites();" class="btn btn-secondary" style="font-family: Quicksand;">Reset</button>
+			</div>
 		</div>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="https://unpkg.com/tsparticles@1.34.0/tsparticles.min.js"></script>
 		<script src="assets/js/loader.js"></script>
 		<script src="assets/js/main.js"></script>

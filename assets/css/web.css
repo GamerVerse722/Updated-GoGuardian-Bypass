@@ -49,7 +49,7 @@ input {
 	margin: 0.13rem;
 }
 
-.icon, label, h2, span, p{
+.icon, label, h2, span, p, i, td{
 	color: rgb(255,255,255)
 }
 
@@ -65,9 +65,19 @@ input {
 	right: 0;
 }
 
-.CurrentVersionDiv {
+.TopLeftMove {
 	position: absolute;
 	top: 0;
 	left: 0;
 	margin: 0.5em;
+}
+
+td {
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+button, #MySelectMenu {
+	margin-left: 2px;
+	margin-right: 2px;
 }

@@ -27,6 +27,45 @@ function checkIcon() {
 	}
 }
 
+function checkFavorites() {
+	let dataSaved = localStorage.getItem("FavoritesList");
+
+	if (dataSaved == null || dataSaved == Object || dataSaved == 'null') {
+		localStorage.setItem("FavoritesList", JSON.stringify([]));
+        updateFavorites();
+	}
+
+	if (dataSaved != null && dataSaved != "null") {
+		updateFavorites();
+	}
+}
+
+function dynamicIframe(url) {
+	var particl = document.getElementById('tsparticles')
+	var ifr = document.getElementById('ifr');
+
+	[].forEach.call(document.querySelectorAll('.needHidden'), function (el) {
+		el.remove();
+	})
+	particl.remove();
+	ifr.visibility = 'visible';
+	ifr.style = 'position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;';
+	ifr.src = url;
+}
+
+function url_input(){
+	var input = document.getElementById('urlInput').value;
+	dynamicIframe(input);
+}
+
+function options_input(){
+	var e = document.getElementById("MySelectMenu");
+	var newSrc = e.options[e.selectedIndex].getAttribute("href");
+	if (newSrc != "Blank") {
+		dynamicIframe(newSrc);
+	}
+}
+
 function startIframe() {
 	var input = document.getElementById('urlInput');
 	var particl = document.getElementById('tsparticles')
@@ -223,7 +262,12 @@ function testDynamic(markId, localDataId, hideSection, bootmode = false, runFunc
 		localStorage.setItem(localDataId, 'checked');
 		checkMark.checked = true;
 		if (runFunction != false) {
-			loadBackground();
+			if (runFunction == 'loadBackground') {
+				loadBackground();
+			}
+			if (runFunction == 'checkFavorites') {
+				checkFavorites();
+			}
 		}
 	}
 
@@ -232,7 +276,12 @@ function testDynamic(markId, localDataId, hideSection, bootmode = false, runFunc
 
 		if (dataSaved == 'checked') {
 			if (runFunction != false) {
-				loadBackground();
+				if (runFunction == 'loadBackground') {
+					loadBackground();
+				}
+				if (runFunction == 'checkFavorites') {
+					checkFavorites();
+				}
 			}
 			checkMark.checked = true;
 			localStorage.setItem(localDataId, 'checked');
@@ -246,14 +295,115 @@ function testDynamic(markId, localDataId, hideSection, bootmode = false, runFunc
 	}
 }
 
+function updateFavorites() {
+    const favorites = document.getElementById('container');
+    let table = document.createElement('table');
+    let testList = JSON.parse(localStorage.getItem('FavoritesList'));
+    favorites.innerHTML = '';
+    currentIndex = 0;
+    for (let website of testList) {
+        let a_element = document.createElement('a');
+        let up_element = document.createElement('i');
+        let down_element = document.createElement('i');
+        let remove_element = document.createElement('i');
+        let elements = document.createElement('tr');
+        let a_td = document.createElement('td');
+        let up_td = document.createElement('td');
+        let down_td = document.createElement('td');
+        let remove_td = document.createElement('td');
+
+        a_element.innerHTML = website[0];
+        a_element.setAttribute('onclick', `current('${website[1]}');`);
+        
+        if (currentIndex != 0) {
+            up_element.setAttribute('class', 'fa-solid fa-up-long');
+            up_element.setAttribute('onclick', `up(${currentIndex});`);
+        }
+        
+        if (currentIndex != testList.length - 1) {
+            down_element.setAttribute('class', 'fa-solid fa-down-long');
+            down_element.setAttribute('onclick', `down(${currentIndex});`);
+        }
+
+        remove_element.setAttribute('class', 'fa-solid fa-xmark');
+        remove_element.setAttribute('onclick', `remove(${currentIndex});`);
+        
+        remove_td.appendChild(remove_element);
+        a_td.appendChild(a_element);
+        up_td.appendChild(up_element);
+        down_td.appendChild(down_element);
+
+        elements.appendChild(remove_td);
+        elements.appendChild(a_td);
+        elements.appendChild(up_td);
+        elements.appendChild(down_td);
+
+        table.appendChild(elements);
+
+        favorites.appendChild(table);
+
+        currentIndex++
+    }
+}
+
+function current(x){
+    dynamicIframe(x);
+}
+
+function up(x){
+    let testList = JSON.parse(localStorage.getItem('FavoritesList'));
+    if (x <= testList.length - 1 && x >= 0) {
+        let element = testList.splice(x, 1)[0];
+        testList.splice(x - 1, 0, element);
+    }
+    localStorage.setItem("FavoritesList", JSON.stringify(testList));
+    updateFavorites();
+}
+
+function down(x){
+    let testList = JSON.parse(localStorage.getItem('FavoritesList'));
+    if (x >= 0 && x <= testList.length - 1) {
+        let element = testList.splice(x, 1)[0];
+        testList.splice(x + 1, 0, element);
+    }
+    localStorage.setItem("FavoritesList", JSON.stringify(testList));
+    updateFavorites();
+}
+
+function remove(x){
+    let testList = JSON.parse(localStorage.getItem('FavoritesList'));
+    testList.splice(x, 1);
+    localStorage.setItem("FavoritesList", JSON.stringify(testList));
+    updateFavorites();
+}
+
+function addFavorites() {
+	var e = document.getElementById("MySelectMenu");
+	var newSrc = e.options[e.selectedIndex];
+	let testList = JSON.parse(localStorage.getItem('FavoritesList'));
+	let addNewItem = [newSrc.innerHTML, newSrc.getAttribute("href")];
+
+	if (testList.some(arr => JSON.stringify(arr) === JSON.stringify(addNewItem)) == false) {
+		testList.push(addNewItem);
+		localStorage.setItem("FavoritesList", JSON.stringify(testList));
+	}
+	updateFavorites();
+}
+
+function resetFavorites() {
+    localStorage.setItem("FavoritesList", JSON.stringify([]));
+    updateFavorites();
+}
+
 checkTitle();
 checkIcon();
 testDynamic('toggleBg', 'BackgroundAnimation', 'tsparticles', bootmode = true, runFunction = 'loadBackground');
 testDynamic('toggleSc', 'SocialMedia', 'socialMedia', bootmode = true);
 testDynamic('toggleEm', 'EmailMenu', 'contactSection', bootmode = true);
 testDynamic('toggleAb', 'AboutSection', 'aboutSection', bootmode = true);
+testDynamic('toggleFa', 'FavoritesMenu', 'favoritesMenu', bootmode = true, runFunction = 'checkFavorites');
 
-document.getElementById('ManualVersion').innerHTML = "V1.25"
+document.getElementById('ManualVersion').innerHTML = "V1.26"
 
 req = new XMLHttpRequest();
 req.open('GET', 'https://raw.githubusercontent.com/GamerVerse722/GoGuardian-Bypass/main/assets/js/currentVersion.js');

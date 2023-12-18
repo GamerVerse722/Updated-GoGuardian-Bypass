@@ -1,3 +1,3 @@
 function versionGrabber() {
-	document.getElementById("newestVersion").innerHTML = "V1.25";
+	document.getElementById("newestVersion").innerHTML = "V1.26";
 }
